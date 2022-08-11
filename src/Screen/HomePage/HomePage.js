@@ -1,4 +1,5 @@
 import AboutDev from "../../Components/AboutDev/AboutDev";
+import Admission from "../../Components/Admission/Admission";
 import Campus from "../../Components/Campus/Campus";
 import Common from "../../Components/Common/Common";
 import Footer from "../../Components/Footer/Footer";
@@ -11,6 +12,7 @@ function HomePage() {
       <AboutDev />
       <Receive />
       <Campus />
+      <Admission />
       <Common />
       <Review />
       <Footer />
