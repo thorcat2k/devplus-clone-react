@@ -9,7 +9,7 @@ const Admission = () => {
       <div className="admission-container">
         <div className="img-admission">
           <img
-            src={require("../../Assets/Imgs/Admission_for_2021.png")}
+            src={require("../../Assets/Imgs/Admission_for_2021.webp")}
             alt=""
           />
         </div>
