@@ -7,8 +7,21 @@ import Footer from "../../Components/Footer/Footer";
 import Receive from "../../Components/Receive/Receive";
 import Review from "../../Components/Review/Review";
 import Navbar from "../../Components/Header/Navbar/Navbar";
+import Loading from "../../Components/Loading/Loading";
+import React, { useState, useEffect } from "react";
 function HomePage() {
+  // const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 10000);
+  // }, []);
   return (
+    // <div>
+    //   {loading ? (
+    //     <Loading />
+    //   ) : (
     <>
       <Navbar />
       <Banner />
@@ -20,6 +33,8 @@ function HomePage() {
       <Review />
       <Footer />
     </>
+    // )}
+    // </div>
   );
 }
 export default HomePage;
