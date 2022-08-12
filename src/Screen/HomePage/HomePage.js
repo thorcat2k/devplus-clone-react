@@ -1,5 +1,6 @@
 import AboutDev from "../../Components/AboutDev/AboutDev";
 import Admission from "../../Components/Admission/Admission";
+import Banner from "../../Components/Banner/Banner";
 import Campus from "../../Components/Campus/Campus";
 import Common from "../../Components/Common/Common";
 import Footer from "../../Components/Footer/Footer";
@@ -9,6 +10,7 @@ import Review from "../../Components/Review/Review";
 function HomePage() {
   return (
     <>
+      <Banner />
       <AboutDev />
       <Receive />
       <Campus />
