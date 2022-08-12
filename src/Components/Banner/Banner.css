@@ -1,9 +1,11 @@
 #banner {
-  z-index: -2;
   /* height: 895px; */
   /* position: relative; */
   display: flex;
   align-items: center;
+}
+.container {
+  z-index: -2;
 }
 .banner-img img {
   height: 895px;

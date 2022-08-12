@@ -3,6 +3,7 @@
   height: auto;
   margin-top: -55px;
   margin-bottom: 80px;
+  z-index: 1;
 }
 .container-hero .hero {
   display: flex;

@@ -94,7 +94,7 @@ function Common() {
         </div>
       </div>
       {poped === 1 ? (
-        <div className="popup-video">
+        <div className="popup-video" onClick={() => openPopup()}>
           <div className="close-span" onClick={() => openPopup()}>
             &times;
           </div>

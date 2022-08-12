@@ -1,8 +1,6 @@
 .concern {
-  position: relative;
   width: 100%;
   padding: 100px 0;
-  z-index: 1;
 }
 .common-side {
   width: 100%;
@@ -106,8 +104,7 @@
     font-size: 30px;
   }
   .video-side .img-part {
-    background: url("https://devplus.edu.vn/assets/images/devplus/video_03.png")
-      top/contain no-repeat;
+    background: url("../../Assets/Imgs/video_03.png") top/contain no-repeat;
     min-height: 480px;
   }
 }
@@ -182,13 +179,13 @@
 .img-part {
   position: relative;
   display: inline-block;
-  background: url("https://devplus.edu.vn/assets/images/devplus/video_03.png")
-    center/contain no-repeat;
+  background: url("../../Assets/Imgs/video_03.png") center/contain no-repeat;
   width: 100%;
   height: 100%;
   min-height: 615px;
   align-items: center;
 }
+
 .img-part .popup-videos {
   position: absolute;
   top: 50%;
@@ -238,15 +235,15 @@
 }
 
 /* Popup video */
-.concern .popup-video {
+.popup-video {
   display: block;
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
-  z-index: 999;
   background: rgba(0, 0, 0, 0.8);
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .concern .popup-video .mfp-iframe {

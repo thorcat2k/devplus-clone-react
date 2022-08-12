@@ -1,19 +1,21 @@
 import "./Admission.css";
-import {useInView} from 'react-intersection-observer'
+import { useInView } from "react-intersection-observer";
 const Admission = () => {
-  const {ref: admissionRef, inView : admissionVisible} = useInView({
-    triggerOnce: true
-  })
+  const { ref: admissionRef, inView: admissionVisible } = useInView({
+    triggerOnce: true,
+  });
   return (
     <section className="admission" ref={admissionRef}>
       <div className="admission-container">
         <div className="img-admission">
           <img
-            src="https://devplus.asia/assets/images/devplus/Admission_for_2021.png"
+            src={require("../../Assets/Imgs/Admission_for_2021.png")}
             alt=""
           />
         </div>
-        <div className={`content-admission ${admissionVisible ? "fade-up" : ""}`}>
+        <div
+          className={`content-admission ${admissionVisible ? "fade-up" : ""}`}
+        >
           <p id="title-admission">Admission for 2021</p>
           <p id="text-admission">
             Disclaimer: This position is expected to start around Feb 2022 and

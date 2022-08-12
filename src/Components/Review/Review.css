@@ -1,13 +1,13 @@
 .review {
   display: flex;
+  position: relative;
   width: 100%;
   padding: 100px 0;
   justify-content: center;
   background: white;
-  position: relative;
+  z-index: 9;
 }
 .review-container {
-  position: relative;
   max-width: 1270px;
   padding: 0px 0 80px;
 }
@@ -34,7 +34,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 .rv-content .author-desc {
   position: relative;

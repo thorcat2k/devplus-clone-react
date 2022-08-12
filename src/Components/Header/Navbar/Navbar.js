@@ -1,65 +1,90 @@
-import React from 'react'
-import { FaAngleDown } from 'react-icons/fa'
-import {MdClose} from 'react-icons/md'
-import Sidebar from '../Sidebar/Sidebar'
-import './Navbar.css'
-import { useState } from 'react'
+import React from "react";
+import { FaAngleDown } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
+import Sidebar from "../Sidebar/Sidebar";
+import "./Navbar.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 const Navbar = () => {
-  const [menuOpen,setMenuOpen] = useState(false)
-  const [sideBarOpen, setSideBarOpen] = useState(false)
-  const [submenuOpen, setSubmenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [sideBarOpen, setSideBarOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
-  const menuToggle = () =>{
+  const menuToggle = () => {
     const windowWidth = window.innerWidth;
-    if(windowWidth > 1000){
-      setSideBarOpen(!sideBarOpen)
-    }else
-    setMenuOpen(!menuOpen)
-  }
-  const submenuToggle = () =>{
-    setSubmenuOpen(!submenuOpen)
-  }
+    if (windowWidth > 1000) {
+      setSideBarOpen(!sideBarOpen);
+    } else setMenuOpen(!menuOpen);
+  };
+  const submenuToggle = () => {
+    setSubmenuOpen(!submenuOpen);
+  };
   // const windowWidth = window.innerWidth;
   // console.log(windowWidth)
   return (
     <header>
-      <nav class="navbar">
+      <nav className="navbar">
         <div className={`navbar-logo`}>
-         <a href="#"> <img
-          src="https://devplus.edu.vn/assets/images/Artboard_2.png"
-          alt="website logo"
-        /></a>
+          <a href="# ">
+            {" "}
+            <img
+              src="https://devplus.edu.vn/assets/images/Artboard_2.png"
+              alt="website logo"
+            />
+          </a>
         </div>
-        <div class={`navbar-links ${menuOpen ? 'navbar-open' : ''}`}>
-          <li class="navbar-link"><a class="navbar-link-title" href="#">Home</a></li>
-            <li class="navbar-link"><a class="navbar-link-title" href="#">About devplus</a></li>
-            <li class="navbar-link">
-                <div class="link">
-                    <div class="title">
-                        <p>Web Design</p>
-                    </div>
-                    <div class="submenu-open-btn" onClick={submenuToggle}><FaAngleDown/></div>
-                </div>
-                
-                <ul class={`submenu ${submenuOpen ? "submenu-open":""}`}>
-                    <li><a href="#">One Plus Campus</a></li>
-                    <li><a href="#">Two Plus Campus</a></li>
-                    <li><a href="#">Three Plus Campus</a></li>
-                    <div class="submenu-close-btn" onClick={submenuToggle}><MdClose /> Close</div>
-                  </ul>
+        <div className={`navbar-links ${menuOpen ? "navbar-open" : ""}`}>
+          <li className="navbar-link">
+            <Link className="navbar-link-title" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="navbar-link">
+            <Link className="navbar-link-title" to="/about-dev">
+              About devplus
+            </Link>
+          </li>
+          <li className="navbar-link">
+            <div className="link">
+              <div className="title">
+                <p>Web Design</p>
+              </div>
+              <div className="submenu-open-btn" onClick={submenuToggle}>
+                <FaAngleDown />
+              </div>
+            </div>
 
-                  
-            </li>
-            <li class="navbar-link"><a class="navbar-link-title" href="#">Devplus Activities</a></li>
+            <ul className={`submenu ${submenuOpen ? "submenu-open" : ""}`}>
+              <li>
+                <Link to="/one-plus-campus">One Plus Campus</Link>
+              </li>
+              <li>
+                <Link to="/two-plus-campus">Two Plus Campus</Link>
+              </li>
+              <li>
+                <a href="# ">Three Plus Campus</a>
+              </li>
+              <div className="submenu-close-btn" onClick={submenuToggle}>
+                <MdClose /> Close
+              </div>
+            </ul>
+          </li>
+          <li className="navbar-link">
+            <Link className="navbar-link-title" to="/dev-activities">
+              Devplus Activities
+            </Link>
+          </li>
+        </div>
 
+        <div
+          className={`navbar-icons ${menuOpen ? "open" : ""}`}
+          onClick={menuToggle}
+        >
+          <div className="navbar-icon"></div>
         </div>
-        
-        <div class={`navbar-icons ${menuOpen ? "open" :""}`} onClick={menuToggle}>
-          <div class="navbar-icon"></div>
-        </div>
-        </nav>
-        <Sidebar sideBarOpen = {sideBarOpen} sideBarToggle = {menuToggle}/>
-        </header>
-  )
-}
-export default Navbar
+      </nav>
+      <Sidebar sideBarOpen={sideBarOpen} sideBarToggle={menuToggle} />
+    </header>
+  );
+};
+export default Navbar;
