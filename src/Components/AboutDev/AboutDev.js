@@ -25,7 +25,7 @@ const AboutDev = () => {
         </div>
         <div className="hero-left fade-up">
           <div className="author">ABOUT DEVPLUS</div>
-          <h2 className="title">
+          <h2 className="title-about">
             The Fact: Skilled labour shortage for software companies but full of
             freshers and low level juniors
           </h2>
