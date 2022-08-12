@@ -1,4 +1,5 @@
 import "./AboutDev.css";
+import { useInView } from "react-intersection-observer";
 const dataAboutDev = [
   { content: "Apply Devplus" },
   { content: "Testing and Interview" },
@@ -7,14 +8,17 @@ const dataAboutDev = [
   { content: "Onboard & start your career" },
 ];
 const AboutDev = () => {
+  const {ref:aboutRef, inView: aboutVisible} = useInView({
+    triggerOnce: true
+  })
   return (
-    <div className="container-hero hero">
+    <div className="container-hero hero" ref={aboutRef}>
       <div className="hero">
         <div className="hero-right">
-          <h4 className="ti fade-up ">Road to be a devplus</h4>
+          <h4 className={`ti ${aboutVisible ? "fade-up" : ""}`}>Road to be a devplus</h4>
           <ul className="part">
             {dataAboutDev.map((item, index) => (
-              <li className="fade-up" key={index}>
+              <li className={`${aboutVisible ? "fade-up" : ""}`} key={index}>
                 <div className="num">
                   <span>{index + 1}</span>
                 </div>
@@ -23,7 +27,7 @@ const AboutDev = () => {
             ))}
           </ul>
         </div>
-        <div className="hero-left fade-up">
+        <div className={`hero-left ${aboutVisible ? "fade-up" : ""}`}>
           <div className="author">ABOUT DEVPLUS</div>
           <h2 className="title-about">
             The Fact: Skilled labour shortage for software companies but full of

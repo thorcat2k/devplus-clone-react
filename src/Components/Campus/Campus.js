@@ -1,4 +1,6 @@
+import React from 'react'
 import'./Campus.css'
+import {useInView} from 'react-intersection-observer'
 const  dataCampus=[
   {
     img:'https://devplus.edu.vn/assets/images/devplus/One_plus.png',
@@ -14,9 +16,13 @@ const  dataCampus=[
 
   }
 ]
+
 function Campus(){
+  const {ref:campusRef, inView: campusVisible} = useInView({
+    triggerOnce: true
+  })
     return(
-        <section className="our-campus">
+        <section className="our-campus" ref={campusRef}>
         <div className="content-campus">
           <div className="campus-container">
             <div className="campus-heading">
@@ -25,7 +31,7 @@ function Campus(){
             <div className="campus-row">
                  {dataCampus.map((title,index)=>(
 
-                  <div className="campus-cover fade up" key={index}>
+                  <div className={`campus-cover ${campusVisible ? "fade-up" : ''}`} key={index}>
                   <div className="campus-size">
                     <div className="campus-img">
                       <img src={title.img} alt="one plus"/>

@@ -1,7 +1,11 @@
 import "./Admission.css";
+import {useInView} from 'react-intersection-observer'
 const Admission = () => {
+  const {ref: admissionRef, inView : admissionVisible} = useInView({
+    triggerOnce: true
+  })
   return (
-    <section className="admission">
+    <section className="admission" ref={admissionRef}>
       <div className="admission-container">
         <div className="img-admission">
           <img
@@ -9,7 +13,7 @@ const Admission = () => {
             alt=""
           />
         </div>
-        <div className="content-admission fade-up">
+        <div className={`content-admission ${admissionVisible ? "fade-up" : ""}`}>
           <p id="title-admission">Admission for 2021</p>
           <p id="text-admission">
             Disclaimer: This position is expected to start around Feb 2022 and

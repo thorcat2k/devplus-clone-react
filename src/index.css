@@ -34,6 +34,18 @@ img {
   max-width: 5000px;
   width: 100%;
 }
+.fade-up {
+  animation-name: fadeInUp;
+  animation-duration: 2s;
+}
+.fade-left {
+  animation-name: fadeInLeft;
+  animation-duration: 2s;
+}
+.fade-right {
+  animation-name: fadeInRight;
+  animation-duration: 2s;
+}
 @keyframes fadeInLeft {
   from {
     transform: translateX(-100%);

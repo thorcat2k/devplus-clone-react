@@ -1,4 +1,5 @@
 import './Receive.css'
+import { useInView } from 'react-intersection-observer'
 const dataReceive=[
   {
     img:'https://devplus.edu.vn/assets/images/categories/icons/1.png',
@@ -47,8 +48,11 @@ const dataReceive=[
   },
 ]
  const Receive =()=>{
+  const {ref:receiveRef,inView: receiveVisible} = useInView({
+    triggerOnce: true
+  })
 return(
-  <section className="receive">
+  <section className="receive" ref={receiveRef}>
   <div className="content-title">
    <div className="content-list">
      <div className="list-heading">
@@ -56,7 +60,7 @@ return(
      </div>
      <div className="list-container">
         {dataReceive.map((item,index)=>(
-          <div className="list-row fade-up" key={index}>
+          <div className={`list-row ${receiveVisible ? "fade-up":""}`} key={index}>
             <div className="list-item">
              <div className="list-icon">
                <img src={item.img} alt="img"/>
