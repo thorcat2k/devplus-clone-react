@@ -1,14 +1,13 @@
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Header/Navbar/Navbar";
-import TwoPlus from "../../Components/Twoplus/Twoplus";
-
-function TwoCampus() {
+import "./AboutDevPlus.css";
+function AboutDevPlus() {
   return (
     <>
       <Navbar />
-      <TwoPlus />
+      <div className="about-dev-container">About DevPlus</div>
       <Footer />
     </>
   );
 }
-export default TwoCampus;
+export default AboutDevPlus;
