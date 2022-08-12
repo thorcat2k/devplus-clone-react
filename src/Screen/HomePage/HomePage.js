@@ -6,12 +6,11 @@ import Common from "../../Components/Common/Common";
 import Footer from "../../Components/Footer/Footer";
 import Receive from "../../Components/Receive/Receive";
 import Review from "../../Components/Review/Review";
-import Navbar from "../../Components/Header/Navbar/Navbar"
-
+import Navbar from "../../Components/Header/Navbar/Navbar";
 function HomePage() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Banner />
       <AboutDev />
       <Receive />
@@ -20,7 +19,6 @@ function HomePage() {
       <Common />
       <Review />
       <Footer />
-      
     </>
   );
 }

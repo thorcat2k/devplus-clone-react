@@ -9,7 +9,10 @@ const Banner = () => {
     <section ref={bannerRef} id="banner">
       <div className="container">
         <div className="banner-img">
-          <img src={require("../../Assets/Imgs/Devplus_missions.png")} alt="" />
+          <img
+            src={require("../../Assets/Imgs/Devplus_missions.webp")}
+            alt=""
+          />
         </div>
         <div className="banner-body">
           <h1 className={`${bannerVisible ? "fade-left" : ""}`}>
